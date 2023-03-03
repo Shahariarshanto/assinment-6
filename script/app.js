@@ -44,9 +44,9 @@ const displayCards = (data)=>{
               <p>${card.published_in}</p>
             </div>
             <button
-            id="modal-btn"
-            onclick="detailsBtn('${card.id}')"
-              
+            data-bs-toggle="modal"
+            data-bs-target="#detailModal"
+            onclick="detailsBtn('${card.id}')"      
               class="inline-flex items-center pl-2 pr-4 py-2 text-sm text-center rounded-full bg-red-100 text-rose-500"
             >
               <svg
@@ -67,12 +67,8 @@ const displayCards = (data)=>{
 
           </div>
         </div>
-
-        <button id="modal-btn">Open Modal</button>
-
         `
-        cards.appendChild(cardDiv)
-
+        cards.appendChild(cardDiv);
     })
 
 }
@@ -80,19 +76,21 @@ const displayCards = (data)=>{
 
 // Card Details Button
 const detailsBtn = (id)=>{
-  console.log(id);
 
   fetch(`https://openapi.programming-hero.com/api/ai/tool/${id}`)
   .then(res=> res.json())
 
   .then(data=> displayModal(data.data))
-    
 
 }
 
 function displayModal (data){
   const {tool_name} = data;
+  console.log(data);
+  const{basic, pro , enterprise} = data.pricing;
+  console.log(basic, pro , enterprise);
   // document.getElementById("modal-title").innerText = tool_name;
-  // document.getElementById("description").innerText = data.description;
+  document.getElementById("description").innerText = data.description;
+  document.getElementById("published-in").innerText = data.published_in;
 
 }

@@ -13,8 +13,6 @@
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-      crossorigin="anonymous"
     />
   </head>
   <body>
@@ -28,6 +26,80 @@
         Sort By Date
       </button>
     </header>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="detailModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="grid grid-cols-2 p-6 space-x-4">
+            <!-- left side content -->
+            <div class="bg-red-100 p-6 rounded-lg border border-red-200">
+              <p id="description" class="text-lg font-bold">
+                ChatGPT is an AI-powered chatbot platform that uses OpenAI's GPT
+                technology to simulate human conversation.
+              </p>
+              <div class="flex justify-between gap-2">
+                <div
+                  class="bg-white text-sm max-w-sm font-bold text-center text-green-800 p-1 rounded"
+                >
+                  $10/month Basic
+                </div>
+                <div
+                  class="bg-white text-sm max-w-sm font-bold text-center text-amber-700 p-1 rounded"
+                >
+                  $50/month Pro
+                </div>
+                <div
+                  class="bg-white text-sm max-w-sm font-bold text-center text-red-800 p-1 rounded"
+                >
+                  Contact us Enterprise
+                </div>
+              </div>
+              <div>
+                <div>
+                  <h3>Features</h3>
+                </div>
+                <div>
+                  <h3>Integrations</h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- right side content -->
+
+            <div class="border border-gray-200 rounded-lg">
+              <a href="#">
+                <img
+                  class="p-6 rounded-lg"
+                  src="./New folder/chat_gpt_shutterstock_Ebru-Omer.jpg"
+                  alt="product image"
+                />
+              </a>
+              <div class="px-4 pb-5 space-y-2">
+                <h5
+                  class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"
+                >
+                  Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
+                </h5>
+                <h4 class="font-bold">Hi, how are you doing today?</h4>
+                <p>
+                  I'm doing well, thank you for asking. How can I assist you
+                  today?
+                </p>
+              </div>
+
+              <!-- end -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <section class="container mx-auto mt-8">
       <div id="card-container" class="grid justify-center md:grid-cols-3 gap-6">
@@ -145,8 +217,8 @@
             </div>
             <button
               data-bs-toggle="modal"
-              data-bs-target="#detail-modal"
-              onclick="detailsBtn(1)"
+              data-bs-target="#detailModal"
+              onclick="detailsBtn(02)"
               href="#"
               class="inline-flex items-center pl-2 pr-4 py-2 text-sm text-center rounded-full bg-red-100 text-rose-500"
             >
@@ -169,28 +241,11 @@
       </div>
     </section>
 
-    <!--  modal -->
-
-    <button id="modal-btn">Open Modal</button>
-
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>Some text in the Modal..</p>
-      </div>
-    </div>
-
     <!-- scrips -->
-    <script src="./script/modal.js" defer></script>
+
     <script src="./script/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="./script/sort.js"></script>
   </body>
